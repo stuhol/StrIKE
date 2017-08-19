@@ -13,7 +13,7 @@ if [[ -z $PKI_ROOT ]]; then
 fi
 
 if [[ ! -d "$PKI_ROOT/ca" ]]; then
-    mkdir -p ca
+    mkdir -p $PKI_ROOT/ca
 fi
 
 echo "Generating CA key"
