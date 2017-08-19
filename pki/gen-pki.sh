@@ -25,6 +25,4 @@ checkRet ./gen-gateway.sh 'O=StrIKE,CN=$ip' '$ip'
 # Generate client key and certificate, then sign with CA
 checkRet ./gen-client.sh 'O=StrIKE,CN=client' /tmp/pki/clients/client.p12
 
-# Serve the client certificate ready for download
-echo "You can download your client certificate package here: http://$ip:8000"
-/tmp/StrIKE-master/dashboard/serve -d /tmp/pki/clients &
+echo "Finished generating PKI"
