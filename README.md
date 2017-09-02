@@ -12,7 +12,7 @@ Below is a description of each component of StrIKE.
 
 ## Build scripts
 
-Located in the build directory these scripts download and build Strongswan.
+Located in the build directory these scripts download and build Strongswan on Alpine (master branch) or Ubuntu (ubuntu branch)
 
 ## Docker conatiner
 
