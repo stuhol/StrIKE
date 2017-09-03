@@ -15,17 +15,17 @@ function checkRet {
 
 # Install required packages to build and run Strongswan
 echo "Installing required packages to build and run Strongswan" && \
-        apk --update add build-base \
-            ca-certificates \
-            ip6tables \
-            iproute2 \
+        checkRet apt-get -y update && \
+        checkRet apt-get install -y build-essential \
+            iptables \
             iptables-dev \
-            libcap \
+            libcap2 \
             libcap-dev \
             openssl \
-            openssl-dev \
+            libssl-dev \
             wget \
-            gnupg
+	    gnupg \
+	    dirmngr
 
 # Change to temporary directory
 cd /tmp
@@ -58,7 +58,6 @@ checkRet ./configure \
             --libexecdir=/usr/lib \
             --with-ipsecdir=/usr/lib/strongswan \
             --enable-acert \
-            --enable-aesni \
             --enable-dhcp \
             --enable-eap-identity \
             --enable-eap-mschapv2 \
