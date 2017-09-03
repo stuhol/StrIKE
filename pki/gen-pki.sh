@@ -3,13 +3,13 @@
 function checkRet {
   "$@"
   ret=$?
-  if [[ $ret != 0 ]]; then
+  if [ $ret != 0 ]; then
     echo "Error - Unable to execute '$@' - Return code $ret"
     exit $ret
   fi
 }
 
-if [[ -z $PKI_ROOT ]]; then
+if [ -z $PKI_ROOT ]; then
     export PKI_ROOT=/tmp/pki/
 fi
 
