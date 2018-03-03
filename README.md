@@ -30,6 +30,12 @@ The Docker container is based on Alpine Linux. Once we've booted into Alpine we 
 0. Expose UDP ports 500/udp, 4500/udp, and 8000/tcp
 0. (Coming soon) Start Strongswan
 
+### Building behind a proxy
+
+If you're behind a proxy you can build the Docker container by passing in build arguments, these are added to the containers' environment variables: 
+
+`docker build --build-arg http_proxy=http://<proxy hostname>:<proxy port> --build-arg https_proxy=http://<proxy hostname>:<proxy port> .`
+
 ## Configuration
 
 ### Gateway Connection configurations
