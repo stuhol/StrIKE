@@ -40,7 +40,7 @@ checkRet wget https://download.strongswan.org/strongswan.tar.bz2
 checkRet wget https://download.strongswan.org/strongswan.tar.bz2.sig
 
 # Get Andreas' public key to check signature 
-checkRet gpg --recv-key DF42C170B34DBA77
+checkRet gpg --keyserver keyserver.ubuntu.com --keyserver-options http-proxy=$http_proxy --recv-key DF42C170B34DBA77
 
 # Verify Strongswan tarball using gnupg
 checkRet gpg --verify strongswan.tar.bz2.sig strongswan.tar.bz2

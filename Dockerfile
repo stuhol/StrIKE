@@ -4,7 +4,7 @@
 FROM alpine
 
 # The StrIKE repo URL
-ENV STRIKE_REPO https://github.com/stuhol/StrIKE/archive/master.zip
+ENV STRIKE_REPO https://github.com/stuhol/StrIKE-Docker/archive/master.zip
 ENV PKI_ROOT /tmp/pki/
 
 RUN     echo "Installing required packages to download StrIKE" && \
@@ -15,10 +15,10 @@ RUN     echo "Installing required packages to download StrIKE" && \
         wget -O strike.zip $STRIKE_REPO && \
         unzip strike.zip && \
         echo "Configuring, compiling, and installing Strongswan" && \
-        cd /tmp/StrIKE-master/build && \
+        cd /tmp/StrIKE-Docker-master/build && \
         sh ./build-strongswan.sh && \
         echo "Generating PKI" && \
-        cd /tmp/StrIKE-master/pki && \
+        cd /tmp/StrIKE-Docker-master/pki && \
         sh ./gen-pki.sh
 
 VOLUME /tmp/pki
